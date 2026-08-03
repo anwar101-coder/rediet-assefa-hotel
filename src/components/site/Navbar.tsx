@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "Rooms & Suites", href: "#rooms" },
-  { label: "Meeting & Events", href: "#amenities" },
-  { label: "Restaurant & Bar", href: "#amenities" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home", to: "/" as const },
+  { label: "Rooms & Suites", href: "/rooms", to: "/rooms" as const },
+  { label: "Meeting & Events", href: "/#amenities" },
+  { label: "Restaurant & Bar", href: "/#amenities" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);

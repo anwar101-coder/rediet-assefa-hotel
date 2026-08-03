@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Cormorant Garamond", "Noto Serif Ethiopic", serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Ethiopic", sans-serif;
+  --font-ethiopic: "Noto Serif Ethiopic", serif;
+}
+
 /*
  * Design system definition.
  *

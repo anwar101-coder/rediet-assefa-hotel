@@ -100,16 +100,20 @@ export function Navbar() {
       {open && (
         <div className="border-t border-border bg-background/98 px-5 py-4 backdrop-blur-xl xl:hidden">
           <nav className="flex flex-col">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 text-sm font-medium text-foreground/85 last:border-0 hover:text-gold"
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) => {
+              const cls =
+                "border-b border-border/60 py-3 text-sm font-medium text-foreground/85 last:border-0 hover:text-gold";
+              return l.to === "/rooms" ? (
+                <Link key={l.label} to="/rooms" onClick={() => setOpen(false)} className={cls}>
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} onClick={() => setOpen(false)} className={cls}>
+                  {l.label}
+                </a>
+              );
+            })}
+
           </nav>
         </div>
       )}

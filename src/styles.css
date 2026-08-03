@@ -166,3 +166,71 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@utility text-luxe-gradient {
+  background: linear-gradient(120deg, var(--gold-soft), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass-card {
+  background: color-mix(in oklab, white 14%, transparent);
+  backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid color-mix(in oklab, white 30%, transparent);
+  box-shadow: var(--shadow-luxe);
+}
+
+@utility glass-panel {
+  background: color-mix(in oklab, white 82%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--gold) 22%, transparent);
+  box-shadow: var(--shadow-lift);
+}
+
+@utility card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    transform: translateY(-10px) rotateX(4deg) rotateY(-4deg) scale(1.015);
+    box-shadow: var(--shadow-luxe);
+  }
+}
+
+@utility gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1.06) translate3d(0,0,0); }
+  100% { transform: scale(1.18) translate3d(-1.5%, -1.5%, 0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes scroll-dot {
+  0% { transform: translateY(0); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translateY(16px); opacity: 0; }
+}
+
+@utility animate-kenburns { animation: kenburns 14s ease-out forwards; }
+@utility animate-fade-up { animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@utility animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
+@utility animate-scroll-dot { animation: scroll-dot 1.8s ease-in-out infinite; }

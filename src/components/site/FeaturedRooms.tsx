@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { Users, BedDouble, ArrowUpRight } from "lucide-react";
+
 import exterior from "@/assets/image-5.png.asset.json";
 import entrance from "@/assets/image-4.png.asset.json";
 import garden from "@/assets/image-2.png.asset.json";

@@ -60,17 +60,21 @@ export function Navbar() {
 
         <div className="flex items-center gap-6">
           <nav className="hidden items-center gap-7 xl:flex">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className={`relative text-[13px] font-medium tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${
-                  scrolled ? "text-foreground/80 hover:text-gold" : "text-white/85 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) => {
+              const cls = `relative text-[13px] font-medium tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${
+                scrolled ? "text-foreground/80 hover:text-gold" : "text-white/85 hover:text-white"
+              }`;
+              return l.to === "/rooms" ? (
+                <Link key={l.label} to="/rooms" className={cls}>
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} className={cls}>
+                  {l.label}
+                </a>
+              );
+            })}
+
           </nav>
 
           <a

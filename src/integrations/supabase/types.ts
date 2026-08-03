@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      rooms: {
+        Row: {
+          amenities: string[]
+          bed_type: string | null
+          capacity: number
+          category: string
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          is_available: boolean
+          name: string
+          name_am: string | null
+          price_per_night: number
+          size_sqm: number | null
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          amenities?: string[]
+          bed_type?: string | null
+          capacity?: number
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_available?: boolean
+          name: string
+          name_am?: string | null
+          price_per_night?: number
+          size_sqm?: number | null
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          amenities?: string[]
+          bed_type?: string | null
+          capacity?: number
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_available?: boolean
+          name?: string
+          name_am?: string | null
+          price_per_night?: number
+          size_sqm?: number | null
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

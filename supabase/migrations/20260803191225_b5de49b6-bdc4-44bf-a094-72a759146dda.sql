@@ -1,0 +1,3 @@
+UPDATE public.rooms SET image_url = '/__l5e/assets-v1/b7fe38ee-70c6-4af7-8902-814b552d0173/standard-room.png' WHERE name = 'Standard Room';
+UPDATE public.rooms SET image_url = '/__l5e/assets-v1/a9e2cdf4-3091-464d-b452-023cb0fdfa05/deluxe-room.png' WHERE name = 'Deluxe Room';
+UPDATE public.rooms SET image_url = '/__l5e/assets-v1/115c4fe4-0ccb-4b78-8f86-9024cf68b641/vip-suite.png' WHERE name = 'VIP Suite';

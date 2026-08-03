@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "Rooms & Suites", href: "#rooms" },
-  { label: "Meeting & Events", href: "#amenities" },
-  { label: "Restaurant & Bar", href: "#amenities" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home", to: "/" as const },
+  { label: "Rooms & Suites", href: "/rooms", to: "/rooms" as const },
+  { label: "Meeting & Events", href: "/#amenities" },
+  { label: "Restaurant & Bar", href: "/#amenities" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,17 +60,21 @@ export function Navbar() {
 
         <div className="flex items-center gap-6">
           <nav className="hidden items-center gap-7 xl:flex">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className={`relative text-[13px] font-medium tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${
-                  scrolled ? "text-foreground/80 hover:text-gold" : "text-white/85 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) => {
+              const cls = `relative text-[13px] font-medium tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full ${
+                scrolled ? "text-foreground/80 hover:text-gold" : "text-white/85 hover:text-white"
+              }`;
+              return l.to === "/rooms" ? (
+                <Link key={l.label} to="/rooms" className={cls}>
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} className={cls}>
+                  {l.label}
+                </a>
+              );
+            })}
+
           </nav>
 
           <a
@@ -94,16 +100,20 @@ export function Navbar() {
       {open && (
         <div className="border-t border-border bg-background/98 px-5 py-4 backdrop-blur-xl xl:hidden">
           <nav className="flex flex-col">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 text-sm font-medium text-foreground/85 last:border-0 hover:text-gold"
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) => {
+              const cls =
+                "border-b border-border/60 py-3 text-sm font-medium text-foreground/85 last:border-0 hover:text-gold";
+              return l.to === "/rooms" ? (
+                <Link key={l.label} to="/rooms" onClick={() => setOpen(false)} className={cls}>
+                  {l.label}
+                </Link>
+              ) : (
+                <a key={l.label} href={l.href} onClick={() => setOpen(false)} className={cls}>
+                  {l.label}
+                </a>
+              );
+            })}
+
           </nav>
         </div>
       )}

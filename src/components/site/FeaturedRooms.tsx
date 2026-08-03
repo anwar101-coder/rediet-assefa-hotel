@@ -1,4 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { Users, BedDouble, ArrowUpRight } from "lucide-react";
+
 import exterior from "@/assets/image-5.png.asset.json";
 import entrance from "@/assets/image-4.png.asset.json";
 import garden from "@/assets/image-2.png.asset.json";
@@ -97,12 +99,13 @@ export function FeaturedRooms() {
                     <span className="font-display text-3xl text-foreground">{r.price}</span>
                     <span className="ml-1 text-xs text-muted-foreground">ETB / night</span>
                   </p>
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/rooms"
                     className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-espresso px-5 py-3 text-xs font-semibold text-linen transition-colors duration-300 hover:bg-gold hover:text-espresso"
                   >
                     Reserve <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
+                  </Link>
+
                 </div>
               </div>
             </article>

@@ -1,13 +1,8 @@
 import { useState } from "react";
-import { Users, BedDouble, Maximize, ArrowUpRight, Phone, Check } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { Users, BedDouble, Maximize, ArrowUpRight } from "lucide-react";
+import { RoomDetailDialog } from "@/components/site/RoomDetailDialog";
 import type { Room } from "@/lib/rooms.functions";
+
 
 function RoomCard({ room, onOpen }: { room: Room; onOpen: (r: Room) => void }) {
   return (

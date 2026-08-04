@@ -14,6 +14,7 @@ export type Room = {
   size_sqm: number | null;
   amenities: string[];
   image_url: string | null;
+  gallery_urls: string[];
   is_available: boolean;
 };
 
@@ -38,7 +39,7 @@ export const listRooms = createServerFn({ method: "GET" }).handler(async (): Pro
   const { data, error } = await supabasePublic
     .from("rooms")
     .select(
-      "id, name, name_am, category, description, price_per_night, capacity, bed_type, size_sqm, amenities, image_url, is_available",
+      "id, name, name_am, category, description, price_per_night, capacity, bed_type, size_sqm, amenities, image_url, gallery_urls, is_available",
     )
     .order("sort_order", { ascending: true });
 
@@ -48,5 +49,6 @@ export const listRooms = createServerFn({ method: "GET" }).handler(async (): Pro
     ...r,
     price_per_night: Number(r.price_per_night),
     amenities: r.amenities ?? [],
+    gallery_urls: r.gallery_urls ?? [],
   })) as Room[];
 });

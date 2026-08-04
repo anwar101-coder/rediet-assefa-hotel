@@ -123,71 +123,7 @@ export function RoomsGrid({ rooms }: { rooms: Room[] }) {
         </div>
       )}
 
-      <Dialog open={!!selected} onOpenChange={(o) => !o && setSelected(null)}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
-          {selected && (
-            <>
-              <DialogHeader>
-                <DialogTitle className="font-display text-3xl font-light">
-                  {selected.name}
-                </DialogTitle>
-                <DialogDescription className="font-ethiopic">
-                  {selected.name_am ?? selected.category}
-                </DialogDescription>
-              </DialogHeader>
-
-              {selected.image_url && (
-                <img
-                  src={selected.image_url}
-                  alt={selected.name}
-                  className="h-60 w-full rounded-2xl object-cover"
-                />
-              )}
-
-              {selected.description && (
-                <p className="text-sm text-muted-foreground">{selected.description}</p>
-              )}
-
-              <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground sm:grid-cols-4">
-                <span className="flex items-center gap-1.5">
-                  <Users className="h-4 w-4 text-gold" /> {selected.capacity} guests
-                </span>
-                {selected.bed_type && (
-                  <span className="flex items-center gap-1.5">
-                    <BedDouble className="h-4 w-4 text-gold" /> {selected.bed_type}
-                  </span>
-                )}
-                {selected.size_sqm && (
-                  <span className="flex items-center gap-1.5">
-                    <Maximize className="h-4 w-4 text-gold" /> {selected.size_sqm} m²
-                  </span>
-                )}
-                <span className="font-display text-lg text-foreground">
-                  {selected.price_per_night.toLocaleString()} ETB
-                </span>
-              </div>
-
-              {selected.amenities.length > 0 && (
-                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {selected.amenities.map((a) => (
-                    <li key={a} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Check className="h-4 w-4 text-gold" /> {a}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <a
-                href="tel:+251913000000"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-soft to-gold px-6 py-3.5 text-sm font-semibold text-espresso transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                <Phone className="h-4 w-4" />
-                {selected.is_available ? "Call to reserve" : "Join the waiting list"}
-              </a>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+      <RoomDetailDialog room={selected} onClose={() => setSelected(null)} />
     </>
   );
 }

@@ -84,7 +84,7 @@ export function Footer() {
           <p className="min-w-0">
             © {new Date().getFullYear()} Rediet Assefa Hotel · Butajira, Ethiopia
           </p>
-          <a href="/admin/login" className="inline-flex shrink-0 items-center gap-1.5 hover:text-gold-soft">
+          <a href="/auth" className="inline-flex shrink-0 items-center gap-1.5 hover:text-gold-soft">
             <Lock className="h-3.5 w-3.5" /> Admin
           </a>
         </div>

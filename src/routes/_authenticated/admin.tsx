@@ -130,7 +130,7 @@ function AdminPage() {
   const saveMutation = useMutation({
     mutationFn: async ({ id, values }: { id: string | null; values: Record<string, unknown> }) => {
       if (id) {
-        const { error } = await supabase.from("rooms").update(values).eq("id", id);
+        const { error } = await supabase.from("rooms").update(values as never).eq("id", id);
         if (error) throw error;
       } else {
         const { error } = await supabase.from("rooms").insert(values as never);

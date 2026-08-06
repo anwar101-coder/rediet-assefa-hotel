@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
+import { BackButton } from "@/components/site/BackButton";
 import { Footer } from "@/components/site/Footer";
 import { RoomsGrid } from "@/components/site/RoomsGrid";
 import { listRooms } from "@/lib/rooms.functions";
@@ -50,6 +51,7 @@ function RoomsPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <BackButton />
       <Navbar />
       <main>
         <section className="bg-secondary/60 px-5 pb-24 pt-36 lg:px-8 lg:pb-32 lg:pt-44">

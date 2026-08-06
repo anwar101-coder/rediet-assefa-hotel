@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
+import { RECEPTION_TEL } from "@/lib/contact";
 
 const links = [
   { label: "Home", href: "/#home", to: "/" as const },

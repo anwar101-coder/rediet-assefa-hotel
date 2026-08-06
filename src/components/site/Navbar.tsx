@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
+import { RECEPTION_TEL } from "@/lib/contact";
 
 const links = [
   { label: "Home", href: "/#home", to: "/" as const },
@@ -78,7 +79,7 @@ export function Navbar() {
           </nav>
 
           <a
-            href="tel:+251913000000"
+            href={`tel:${RECEPTION_TEL}`}
             className="hidden items-center gap-2 rounded-full bg-gradient-to-r from-gold-soft to-gold px-6 py-3 text-[13px] font-semibold text-espresso shadow-[0_12px_28px_-14px_rgba(200,122,75,0.9)] transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
           >
             <Phone className="h-4 w-4" />

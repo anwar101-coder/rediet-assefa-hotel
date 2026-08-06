@@ -5,6 +5,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Loader2, LogOut, Plus, Pencil, Trash2, ShieldAlert, Eye, EyeOff } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { BackButton } from "@/components/site/BackButton";
 import {
   Dialog,
   DialogContent,
@@ -185,6 +186,7 @@ function AdminPage() {
   if (!access?.isAdmin) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-secondary/60 px-5">
+        <BackButton />
         <div className="max-w-md rounded-3xl border border-border bg-card p-8 text-center">
           <ShieldAlert className="mx-auto h-8 w-8 text-gold" />
           <h1 className="mt-4 font-display text-2xl font-light text-foreground">
@@ -209,6 +211,7 @@ function AdminPage() {
 
   return (
     <div className="min-h-screen bg-secondary/50 px-5 py-10 lg:px-10">
+      <BackButton />
       <div className="mx-auto max-w-6xl">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>

@@ -1,4 +1,11 @@
-import { Phone, Send, MapPin, Mail, Facebook, Lock } from "lucide-react";
+import { Phone, Send, MapPin, Mail, Facebook, Lock, Navigation } from "lucide-react";
+import {
+  RECEPTION_PHONE,
+  RECEPTION_TEL,
+  TELEGRAM_URL,
+  FACEBOOK_URL,
+  YANDEX_MAPS_URL,
+} from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -13,13 +20,13 @@ export function Footer() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
-                href="tel:+251913000000"
+                href={`tel:${RECEPTION_TEL}`}
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-soft to-gold px-6 py-3 text-sm font-semibold text-espresso transition-transform duration-300 hover:-translate-y-0.5"
               >
-                <Phone className="h-4 w-4" /> Call Reception
+                <Phone className="h-4 w-4" /> Call {RECEPTION_PHONE}
               </a>
               <a
-                href="https://t.me/"
+                href={TELEGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white/85 transition-colors duration-300 hover:border-gold hover:text-gold-soft"
@@ -38,7 +45,15 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href="tel:+251913000000" className="hover:text-gold-soft">+251 91 300 0000</a>
+                <a href={`tel:${RECEPTION_TEL}`} className="hover:text-gold-soft">
+                  {RECEPTION_PHONE}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Send className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-gold-soft">
+                  Telegram · {RECEPTION_PHONE}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
@@ -48,13 +63,14 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Facebook className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a
-                  href="https://www.facebook.com/search/top?q=rediet%20assefa%20hotel"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-gold-soft"
-                >
-                  Find us on Facebook
+                <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:text-gold-soft">
+                  Rediet Assefa International Hotel
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Navigation className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <a href={YANDEX_MAPS_URL} target="_blank" rel="noreferrer" className="hover:text-gold-soft">
+                  Find us on Yandex Maps
                 </a>
               </li>
             </ul>

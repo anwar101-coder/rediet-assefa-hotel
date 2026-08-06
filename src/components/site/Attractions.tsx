@@ -1,9 +1,22 @@
 import { MapPin, Mountain, Waves, Trees } from "lucide-react";
+import { YANDEX_MAPS_URL } from "@/lib/contact";
 
 const spots = [
-  { icon: Mountain, name: "Gurage Highlands", detail: "Scenic mountain drives, 45 min away" },
-  { icon: Waves, name: "Crater Lakes", detail: "Lake Bishoftu-style crater lakes nearby" },
-  { icon: Trees, name: "Adadi Mariam & Tiya", detail: "Rock-hewn church and UNESCO stelae field" },
+  {
+    icon: Waves,
+    name: "Hare Shetan Crater Lake",
+    detail: "HARA SHEYTANA — striking volcanic crater lake just outside Butajira",
+  },
+  {
+    icon: Mountain,
+    name: "የኢላል ዳገት",
+    detail: "The Ilal escarpment — panoramic highland views and scenic drives",
+  },
+  {
+    icon: Trees,
+    name: "Zeytuna Chaka Natural Park",
+    detail: "Shaded forest walks and birdlife a short trip from the hotel",
+  },
 ];
 
 export function Attractions() {
@@ -51,8 +64,16 @@ export function Attractions() {
           </div>
         </div>
 
-        <p className="mt-8 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <MapPin className="h-4 w-4 text-gold" /> Butajira, Gurage Zone, Central Ethiopia
+        <p className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs text-muted-foreground">
+          <MapPin className="h-4 w-4 text-gold" /> Butajira, Gurage Zone, Central Ethiopia ·
+          <a
+            href={YANDEX_MAPS_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-gold hover:underline"
+          >
+            View on Yandex Maps
+          </a>
         </p>
       </div>
     </section>

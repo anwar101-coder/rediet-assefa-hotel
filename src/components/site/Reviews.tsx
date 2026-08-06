@@ -2,22 +2,32 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
-    name: "Michael Brandt",
-    origin: "Germany · Google Review",
+    name: "Mike Fekadu",
+    origin: "Local Guide · 35 reviews · Google Maps",
+    when: "a year ago",
     rating: 5,
-    text: "One of the best hotels between Addis and Hawassa. Spotless room, hot shower, great Wi-Fi and the staff went out of their way to help us with directions.",
+    text: "I recently had the pleasure of staying at Rediet Hotel, and I must say it was an exceptional experience. Food was amazing and the hospitality extended by the staff was warm and welcoming, making me feel right at home. Highly recommended!",
   },
   {
-    name: "Sarah Delacroix",
-    origin: "France · Google Review",
+    name: "Yannick St",
+    origin: "Local Guide · 180 reviews · Google Maps",
+    when: "a year ago",
     rating: 5,
-    text: "Beautiful gardens and the traditional tukul area is lovely at night. The breakfast was generous and the coffee ceremony was a highlight of our trip.",
+    text: "Wonderful lunch in the garden. Tasty coffee in the sun. What an experience out of nowhere.",
   },
   {
-    name: "Daniel Okoro",
-    origin: "Kenya · Google Review",
+    name: "Alan Owens",
+    origin: "Local Guide · 221 reviews · Google Maps",
+    when: "6 years ago",
     rating: 5,
-    text: "We hosted a two-day training in their hall. Professional setup, reliable power, good catering. Easily the most organised venue in Butajira.",
+    text: "From Wales UK, travelling from Addis to Hosanna and stopped by here for a meal and rest. Nice place, nice food, worth a visit...",
+  },
+  {
+    name: "Daniel Kretsu",
+    origin: "Local Guide · 174 reviews · Google Maps",
+    when: "6 years ago",
+    rating: 5,
+    text: "Great Macchiato with milk here!",
   },
 ];
 
@@ -28,7 +38,7 @@ export function Reviews() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-[11px] uppercase tracking-[0.4em] text-gold">Guest Voices</span>
           <h2 className="mt-4 font-display text-4xl font-light text-foreground sm:text-5xl">
-            Loved by travellers worldwide
+            Real reviews from our guests
           </h2>
           <div className="mt-6 flex items-center justify-center gap-2">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -38,14 +48,14 @@ export function Reviews() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-6 [perspective:1600px] md:grid-cols-3">
+        <div className="mt-14 grid gap-6 [perspective:1600px] md:grid-cols-2 xl:grid-cols-4">
           {reviews.map((r) => (
             <figure
               key={r.name}
-              className="card-3d relative rounded-3xl border border-border bg-card p-7"
+              className="card-3d relative flex flex-col rounded-3xl border border-border bg-card p-7"
             >
               <Quote className="h-8 w-8 text-gold/30" />
-              <blockquote className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                 "{r.text}"
               </blockquote>
               <figcaption className="mt-6 border-t border-border pt-4">
@@ -53,6 +63,7 @@ export function Reviews() {
                 <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
                   {r.origin}
                 </p>
+                <p className="mt-1 text-[11px] text-muted-foreground/70">{r.when}</p>
               </figcaption>
             </figure>
           ))}

@@ -24,9 +24,9 @@ import {
 } from "@/components/ui/dialog";
 import type { Room } from "@/lib/rooms.functions";
 
-export const RECEPTION_PHONE = "0930717273";
-const RECEPTION_TEL = "+251930717273";
-const TELEGRAM_URL = `https://t.me/${RECEPTION_TEL}`;
+import { RECEPTION_PHONE, RECEPTION_TEL, TELEGRAM_URL } from "@/lib/contact";
+
+export { RECEPTION_PHONE };
 
 const policies = [
   { icon: Clock, title: "Check-in / Check-out", body: "Check-in from 12:00 PM · Check-out by 11:00 AM" },

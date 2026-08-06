@@ -4,6 +4,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Loader2, Lock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { BackButton } from "@/components/site/BackButton";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -87,6 +88,7 @@ function AuthPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-secondary/60 px-5 py-16">
+      <BackButton />
       <div className="w-full max-w-md rounded-3xl border border-border bg-card p-8 shadow-[0_30px_80px_-50px_rgba(43,35,31,0.6)]">
         <div className="text-center">
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15 text-gold">

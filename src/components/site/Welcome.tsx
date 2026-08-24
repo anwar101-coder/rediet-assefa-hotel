@@ -1,5 +1,5 @@
-import lounge from "@/assets/image.png.asset.json";
-import garden from "@/assets/image-2.png.asset.json";
+import lounge from "@/assets/image.png";
+import garden from "@/assets/image-2.png";
 
 export function Welcome() {
   return (
@@ -7,10 +7,10 @@ export function Welcome() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
         <div className="relative [perspective:1400px]">
           <div className="card-3d overflow-hidden rounded-[2rem] shadow-[var(--shadow-luxe)]">
-            <img src={lounge.url} alt="Hotel terrace and lounge entrance" className="h-[26rem] w-full object-cover" />
+            <img src={lounge} alt="Hotel terrace and lounge entrance" className="h-[26rem] w-full object-cover" />
           </div>
           <div className="card-3d absolute -bottom-10 -right-2 hidden w-52 overflow-hidden rounded-3xl border-4 border-background shadow-[var(--shadow-lift)] sm:block lg:-right-8">
-            <img src={garden.url} alt="Garden tukuls at the hotel" className="h-40 w-full object-cover" />
+            <img src={garden} alt="Garden tukuls at the hotel" className="h-40 w-full object-cover" />
           </div>
           <div className="absolute -left-6 -top-6 -z-10 h-40 w-40 rounded-full bg-gold/20 blur-3xl" />
         </div>

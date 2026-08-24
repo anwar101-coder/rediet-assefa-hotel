@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, CalendarDays, BedDouble, Search } from "lucide-react";
-import exterior from "@/assets/image-5.png.asset.json";
-import entrance from "@/assets/image-4.png.asset.json";
-import garden from "@/assets/image-2.png.asset.json";
+import exterior from "@/assets/image-5.png";
+import entrance from "@/assets/image-4.png";
+import garden from "@/assets/image-2.png";
 
 const slides = [
   {
-    image: exterior.url,
+    image: exterior,
     badge: "Butajira · Ethiopia",
     title: "Discover a Hotel That Defines a New Dimension of Luxury",
     text: "Refined rooms, warm Ethiopian hospitality and world-class service, right in the heart of Butajira city.",
   },
   {
-    image: entrance.url,
+    image: entrance,
     badge: "Since our first guest",
     title: "Take the Luxury Experience Home",
     text: "From sunlit terraces to elegant suites, every corner of Rediet Assefa is designed for effortless comfort.",
   },
   {
-    image: garden.url,
+    image: garden,
     badge: "Gardens · Events · Dining",
     title: "Dream On! A Wonderful Holiday Awaits You",
     text: "Traditional tukul lounges, green gardens and grand event halls for gatherings you will never forget.",

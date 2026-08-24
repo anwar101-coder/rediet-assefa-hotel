@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Users, BedDouble, ArrowUpRight } from "lucide-react";
 
-import standard from "@/assets/room-9.png.asset.json";
-import deluxe from "@/assets/room-12.png.asset.json";
-import suite from "@/assets/room-14.png.asset.json";
+import standard from "@/assets/room-9.png";
+import deluxe from "@/assets/room-12.png";
+import suite from "@/assets/room-14.png";
 
 const rooms = [
   {
@@ -12,7 +12,7 @@ const rooms = [
     price: "1,800",
     capacity: 2,
     bed: "Queen bed",
-    image: standard.url,
+    image: standard,
     features: ["En-suite bathroom", "Smart TV", "Free Wi-Fi"],
   },
   {
@@ -21,7 +21,7 @@ const rooms = [
     price: "2,900",
     capacity: 3,
     bed: "King bed",
-    image: deluxe.url,
+    image: deluxe,
     features: ["Balcony", "Breakfast included", "Work desk"],
   },
   {
@@ -30,7 +30,7 @@ const rooms = [
     price: "4,500",
     capacity: 4,
     bed: "King + sofa bed",
-    image: suite.url,
+    image: suite,
     features: ["Living room", "Garden view", "Airport pickup"],
   },
 ];

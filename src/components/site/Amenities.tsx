@@ -6,7 +6,7 @@ import {
   ConciergeBell,
   Shirt,
 } from "lucide-react";
-import hall from "@/assets/image-3.png.asset.json";
+import hall from "@/assets/image-3.png";
 
 const amenities = [
   { icon: UtensilsCrossed, title: "Restaurant & Bar", text: "Ethiopian classics and international dishes served all day." },
@@ -24,7 +24,7 @@ export function Amenities() {
         <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div className="relative [perspective:1400px]">
             <div className="card-3d overflow-hidden rounded-[2rem] border border-white/10">
-              <img src={hall.url} alt="Event and conference hall" className="h-[24rem] w-full object-cover" />
+              <img src={hall} alt="Event and conference hall" className="h-[24rem] w-full object-cover" />
             </div>
             <div className="glass-card absolute -bottom-8 left-6 rounded-2xl px-6 py-4">
               <p className="font-display text-2xl text-gold-soft">Event Hall</p>

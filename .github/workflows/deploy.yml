@@ -38,6 +38,16 @@ jobs:
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
 
+      - name: Check build output
+        run: |
+          echo "=== .output/public ==="
+          ls -la .output/public
+          echo "=== index.html ==="
+          test -f .output/public/index.html
+
+      - name: Add .nojekyll
+        run: touch .output/public/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -45,6 +55,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
+
   deploy:
     environment:
       name: github-pages
